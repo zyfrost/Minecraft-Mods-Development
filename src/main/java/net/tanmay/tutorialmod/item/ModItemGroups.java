@@ -12,23 +12,26 @@ import net.tanmay.tutorialmod.TutorialMod;
 import net.tanmay.tutorialmod.block.ModBlocks;
 
 public class ModItemGroups {
-public static final ItemGroup RUBY_GROUP = Registry.register(Registries.ITEM_GROUP,
-        new Identifier(TutorialMod.MOD_ID,"ruby"),
-        FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruby"))
-            .icon(()->new ItemStack(ModItems.RUBY)).entries((displayContext, entries) ->
-                {
-                    entries.add(ModItems.RUBY);
-                    entries.add(ModItems.RAW_RUBY);
-                    entries.add(Items.DIAMOND_HOE);
-                    entries.add(Items.DIAMOND);
-                    entries.add(ModBlocks.RUBY_BLOCK);
-                    entries.add(ModBlocks.RAW_RUBY_BLOCK);
+    public static final ItemGroup RUBY_GROUP = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(TutorialMod.MOD_ID, "ruby"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruby"))
+                    .icon(() -> new ItemStack(ModItems.RUBY)).entries((displayContext, entries) ->
+                    {
+                        entries.add(ModItems.RUBY);
+                        entries.add(ModItems.RAW_RUBY);
 
-                }).build());
+                        entries.add(ModBlocks.RUBY_BLOCK);
+                        entries.add(ModBlocks.RAW_RUBY_BLOCK);
+
+                    entries.add(ModBlocks.RAW_RUBY_ORE);
+                        entries.add(ModBlocks.DEEPSLATE_RUBY_ORE);
+                        entries.add(ModBlocks.NETHER_RUBY_ORE);
+                        entries.add(ModBlocks.END_STONE_RUBY_ORE);
+
+                    }).build());
 
 
-
-    public static void registerItemGroups(){
+    public static void registerItemGroups() {
         TutorialMod.LOGGER.info("Registering Item Groups for :" + TutorialMod.MOD_ID);
     }
 }
